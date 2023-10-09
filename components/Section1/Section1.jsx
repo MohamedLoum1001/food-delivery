@@ -9,7 +9,9 @@ const Section1 = () => {
             <Image style={styles.Image}
                 source={require('../../assets/food1.png')}
             />
-            <Text style={styles.Section}>Food for everyone </Text>
+            <Text style={styles.Section}>Food for 
+            
+            everyone </Text>
 
             <Image style={styles.Img}
                 source={require('../../assets/Group.png')}
