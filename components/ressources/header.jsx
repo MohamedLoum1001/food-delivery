@@ -1,6 +1,5 @@
 import React from "react";
 import { View, Text, StyleSheet, Image } from "react-native";
-import Icon from 'react-native-vector-icons/FontAwesome'; // Importez l'icône FontAwesome (vous pouvez utiliser d'autres icônes aussi)
 
 
 const HeaderFilArien = ({ title }) => {

@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import { Image, Text, Alert, TextInput, View, StyleSheet } from "react-native";
-// import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import HeaderFilArien from "../ressources/header";
 import CustomButton from "../ressources/Button";
 import { CheckBox, Icon } from "@rneui/themed";
@@ -14,7 +12,7 @@ export default function Profil() {
   const [check2, setCheck2] = useState(false);
   const [check3, setCheck3] = useState(false);
   return (
-    <View style={{ display: "flex",}}>
+    <View style={{ display: "flex", marginTop: 40, position: "relative", display: 'flex', height: 500,}}>
       <HeaderFilArien title="My Profil" />
 
       <View style={{ display: 'flex', flex: 1, top: 0, alignItems: 'center'}}>
@@ -28,7 +26,7 @@ export default function Profil() {
             <View style={styles.column}>
               <Text style={{fontSize: 16, fontWeight: 'bold',}}>Marvis Ighedosa</Text>
               <Text style={{fontSize: 13, marginTop: 6,}}>dosamarvis@gmail.com</Text>
-              <Text style={{fontSize: 12, marginTop: 10,}}>
+              <Text style={{fontSize: 12, marginTop: 10, position: "relative",}}>
                 No 15 uti street off ovie palace road effurun delta state
               </Text>
             </View>
@@ -127,7 +125,9 @@ export default function Profil() {
           </View>
         </View>
       </View>
-      <CustomButton title="Updatet" onPress={handleButtonPress} />
+      <View style={{ marginLeft: 30, }}>
+        <CustomButton title="Updatet" onPress={handleButtonPress} />
+      </View>
     </View>
   );
 }

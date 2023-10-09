@@ -1,9 +1,17 @@
 import React, { useState } from "react";
-import { Image, Text, Alert, TextInput, View, StyleSheet } from "react-native";
+import { Image, Text, TextInput, View, StyleSheet } from "react-native";
 import CustomButton from "../ressources/Button";
+import { useNavigation } from '@react-navigation/native';
 
-export default function SignIn() {
-  
+
+function SignIn() {
+
+  const navigation = useNavigation();
+
+  const handleLogin = () => {
+    navigation.navigate('Profil');
+  };
+
   return (
     <View
       style={{
@@ -35,14 +43,15 @@ export default function SignIn() {
         }}
       >
         <CustomButton title="Login"
-          onPress={() =>
-            this.props.navigation.navigate('Profil')
-          } />
+          onPress={handleLogin} />
       </View>
       
     </View>
   );
 }
+
+export default SignIn;
+
 const styles = StyleSheet.create({
   login: {
     display: "flex",

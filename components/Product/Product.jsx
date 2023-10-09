@@ -1,23 +1,44 @@
 import React from "react";
 import { View, StyleSheet, Image } from "react-native";
-import Icon from 'react-native-vector-icons/FontAwesome';
+import Swiper from 'react-native-swiper';
 
 export default function Product () {
   return (
-    <View style={{ display: "flex", flex: 1,  flexDirection: "row", position: "relative", marginBottom: 40,}}>
-      <View style={styles.entete}>
-        <Image source={require("../../assets/chevron-left.png")} style={{display: 'flex', position: 'absolute', right: 150}} />
-        <Image source={require("../../assets/Favorite.png")} style={{display: 'flex', position: 'absolute', left: 130}} />
+    <Swiper style={styles.wrapper} showsButtons={true}>
+      <View style={styles.slide}>
+        <Image
+          source={require('../../assets/Plat.png')}
+          style={styles.image}
+          resizeMode="cover"
+        />
       </View>
-    </View>
+      <View style={styles.slide}>
+        <Image
+          source={require('../../assets/Plat2.jpeg')}
+          style={styles.image}
+          resizeMode="cover"
+        />
+      </View>
+      <View style={styles.slide}>
+        <Image
+          source={require('../../assets/Plat3.jpeg')}
+          style={styles.image}
+          resizeMode="cover"
+        />
+      </View>
+    </Swiper>
   );
 };
 
 const styles = StyleSheet.create({
-  entete: {
-    display: "flex",
-    flexDirection: "row",
-    position: "relative",
-    marginBottom: 40,
+  wrapper: {},
+  slide: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  image: {
+    width: '100%',
+    height: '100%',
   },
 });
