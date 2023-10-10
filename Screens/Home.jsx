@@ -59,6 +59,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     padding: 100,
+    marginTop: -60
   },
   toggler: {
     marginRight: 300,

@@ -8,7 +8,7 @@ export default function CardMenu() {
             {cardImage.map(item => (
                 <View style={styles.card}>
                     <View style={styles.cardHeader}>
-                        <Image source={item.img} style={styles.img} />
+                        <Image source={item.img} key={item.id} style={styles.img} />
                     </View>
 
                     <View style={styles.title}>

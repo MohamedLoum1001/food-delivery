@@ -9,6 +9,7 @@ function SignIn() {
   const navigation = useNavigation()
 
   const handleLogin = () => {
+    console.log('Navigating to Home');
     navigation.navigate('Home');
   };
 

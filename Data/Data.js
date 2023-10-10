@@ -20,13 +20,14 @@ export const navlink = [
 
 export const cardImage = [
     {
+        id: 1,
         img : require('../assets/images/plat1.png'),
         titre: "Veggie",
         texte: "tomato mix",
         prix: "N1,900"
     },
     {
-
+        id: 1,
         img : require('../assets/images/plat2.png'),
         titre: "Spicy",
         texte: "fish sauce",
