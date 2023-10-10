@@ -15,9 +15,9 @@ const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    // <View style={styles.container}>
+    // <View style={{ backgroundColor: "#f2f2f2"}}>
     //   {/* <Login /> */}
-    //   <Profil />
+    //   <Product />
     //   {/* <Product /> */}
 
     // </View>
@@ -26,9 +26,10 @@ export default function App() {
       <Stack.Navigator>
         <Stack.Screen name="Login" component={Login} options={{ headerShown: false }} />
         <Stack.Screen name="Profil" component={Profil} options={{ headerShown: false }} />
-        <Stack.Screen name="SignIn" component={SignIn} options={{ headerShown: false }} />
+        <Stack.Screen name="Product" component={Product} options={{ headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>
+
 
     // <Provider>
     //   <NavigationContainer>

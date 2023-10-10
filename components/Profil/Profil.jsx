@@ -3,10 +3,14 @@ import { Image, Text, Alert, TextInput, View, StyleSheet } from "react-native";
 import HeaderFilArien from "../ressources/header";
 import CustomButton from "../ressources/Button";
 import { CheckBox, Icon } from "@rneui/themed";
+import { useNavigation } from '@react-navigation/native';
 
 export default function Profil() {
-  const handleButtonPress = () => {
-    Alert.alert("Bouton appuyé !");
+
+  const navigation = useNavigation();
+
+  const handleLogin = () => {
+    navigation.navigate('Product');
   };
   const [check1, setCheck1] = useState(false);
   const [check2, setCheck2] = useState(false);
@@ -125,8 +129,8 @@ export default function Profil() {
           </View>
         </View>
       </View>
-      <View style={{ marginLeft: 30, }}>
-        <CustomButton title="Updatet" onPress={handleButtonPress} />
+      <View style={{ marginLeft:20 }}>
+        <CustomButton title="Updatet" onPress={handleLogin} />
       </View>
     </View>
   );
