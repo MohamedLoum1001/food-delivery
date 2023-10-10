@@ -19,7 +19,7 @@ export default function Product() {
             require("../../assets/Plat.png"),
           ]}
         />
-        <View style={styles.desc}>
+        <View style={styles.descr}>
           <Text style={styles.titre}>Veggie tomato mix</Text>
           <Text style={styles.price}>N1,900</Text>
           <View>
@@ -35,26 +35,6 @@ export default function Product() {
           </View>
         </View>
       </SafeAreaView>
-
-        {/* <View>
-          <Image source={require("../../assets/chevron-left.png")} />
-        </View>
-        <Image source={require("../../assets/Plat.png")} />
-        <View style={styles.desc}>
-          <Text style={styles.titre}>Veggie tomato mix</Text>
-          <Text style={styles.price}>N1,900</Text>
-          <View>
-            <Text style={styles.soustitre}>Delivery info</Text>
-            <Text style={styles.description}>Delivered between monday aug and thursday 20 from 8pm to 91:32 pm</Text>
-          </View>
-          <View>
-            <Text style={styles.soustitre}>Delivery info</Text>
-            <Text style={styles.description}>Delivered between monday aug and thursday 20 from 8pm to 91:32 pm</Text>
-          </View>
-          <View style={{ marginLeft:20 }}>
-            <CustomButton title="Add to cart" onPress={handleButtonPress} />
-          </View>
-        </View> */}
     </View>
   );
 }
@@ -69,7 +49,7 @@ const styles = StyleSheet.create({
     width: '100%',
     height: '100%', 
   },
-  desc: {
+  descr: {
     backgroundColor: "#f2f2f2",
     flex: 0.5,
     position: 'relative',
