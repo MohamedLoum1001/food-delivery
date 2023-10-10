@@ -1,14 +1,76 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
 
 const History = () => {
   return (
-    <View>
-      <Text>History</Text>
+    <View style={styles.Section2}>
+
+        <View >
+            <Image style={styles.Image}
+                source={require('../assets/chevron-left.png')}
+            />
+
+        </View>
+        <View>
+            <Text style={styles.Para}>History </Text>
+
+        </View>
+        <Image style={styles.Ima}
+            source={require('../assets/Vector.png')}
+
+        />
+        <Text style={styles.Par}>No history yet </Text>
+        <Text style={styles.Pa}>Hit the orange button down below to Create an order </Text>
+
+        <TouchableOpacity style={styles.Btn}>
+            <Text style={{ color: 'white' }}>Start odering</Text>
+        </TouchableOpacity>
     </View>
-  )
+);
 }
 
 export default History
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  Image: {
+    marginLeft: 50,
+    marginTop: 80,
+},
+Para: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginLeft: 150,
+    marginBottom: 150,
+},
+Ima: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginLeft: 130,
+    marginTop: 50,
+
+},
+Par: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginLeft: 140,
+    marginTop: 30,
+},
+Pa: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginLeft: 100,
+    marginTop: 20,
+},
+Btn: {
+    backgroundColor: '#fa4a0c',
+    borderRadius: 50,
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: 200,
+    height: 40,
+    marginLeft: 80,
+    marginTop: 100,
+}
+})

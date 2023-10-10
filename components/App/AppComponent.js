@@ -30,7 +30,9 @@ const AppComponent = () => {
           component={Home}
           options={({ navigation }) => ({
             headerRight: () => (
-              <Icon onPress={() => navigateToScreenInTab(navigation, 'Home')} />
+              <Icon
+                onPress={() => navigateToScreenInTab(navigation, 'Home')}
+              />
             ),
           })}
         />
@@ -45,15 +47,7 @@ const AppComponent = () => {
           headerShown: false,
         }}
       >
-        <Stack.Screen
-          name='Favoris'
-          component={Favoris}
-          options={({ navigation }) => ({
-            headerRight: () => (
-              <Icon onPress={() => navigateToScreenInTab(navigation, 'Favoris')} />
-            ),
-          })}
-        />
+        <Stack.Screen name='Favoris' component={Favoris} />
       </Stack.Navigator>
     );
   };
@@ -65,15 +59,7 @@ const AppComponent = () => {
           headerShown: false,
         }}
       >
-        <Stack.Screen
-          name='User'
-          component={User}
-          options={({ navigation }) => ({
-            headerRight: () => (
-              <Icon onPress={() => navigateToScreenInTab(navigation, 'User')} />
-            ),
-          })}
-        />
+        <Stack.Screen name='User' component={User} />
       </Stack.Navigator>
     );
   };
@@ -85,21 +71,14 @@ const AppComponent = () => {
           headerShown: false,
         }}
       >
-        <Stack.Screen
-          name='History'
-          component={History}
-          options={({ navigation }) => ({
-            headerRight: () => (
-              <Icon onPress={() => navigateToScreenInTab(navigation, 'User')} />
-            ),
-          })}
-        />
+        <Stack.Screen name='History' component={History} />
       </Stack.Navigator>
     );
   };
 
   return (
     <NavigationContainer style={styles.container}>
+
       <Tab.Navigator
         tabBarOptions={{
           style: {
@@ -120,40 +99,37 @@ const AppComponent = () => {
           component={HomeStack}
           options={{
             tabBarIcon: ({ color, size }) => (
-              <FontAwesome name="home" size={size} color={color} />
+              <FontAwesome name='home' size={size} color={color} />
             ),
             headerShown: false,
           }}
         />
-
         <Tab.Screen
           name='Favoris'
           component={FavorisStack}
           options={{
             tabBarIcon: ({ color, size }) => (
-              <FontAwesome name="heart" size={size} color={color} />
+              <FontAwesome name='heart' size={size} color={color} />
             ),
             headerShown: false,
           }}
         />
-
         <Tab.Screen
           name='User'
           component={UserStack}
           options={{
             tabBarIcon: ({ color, size }) => (
-              <FontAwesome name="user" size={size} color={color} />
+              <FontAwesome name='user' size={size} color={color} />
             ),
             headerShown: false,
           }}
         />
-
         <Tab.Screen
           name='History'
           component={HistoryStack}
           options={{
             tabBarIcon: ({ color, size }) => (
-              <FontAwesome name="history" size={size} color={color} />
+              <FontAwesome name='history' size={size} color={color} />
             ),
             headerShown: false,
           }}
@@ -165,4 +141,12 @@ const AppComponent = () => {
 
 export default AppComponent;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    flexDirection: 'column',
+    backgroundColor: '#f2f2f2',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});
