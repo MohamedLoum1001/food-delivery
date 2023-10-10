@@ -84,6 +84,8 @@ const styles = StyleSheet.create({
   tab: {
     paddingEnd: 40,
     color: "black",
+    fontSize: 16,
+    fontWeight: "bold",
     width: 100,
     justifyContent: "center",
     alignItems: "center",
@@ -92,6 +94,7 @@ const styles = StyleSheet.create({
     marginEnd: 20,
     paddingEnd: 10,
     fontSize: 18,
+    fontWeight: "bold",
     borderBottomWidth: 2,
     borderColor: "red",
   },
