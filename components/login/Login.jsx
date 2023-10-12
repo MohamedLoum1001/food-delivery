@@ -6,6 +6,7 @@ import SignUp from "./SignUp";
 export default function Login() {
 
   const [view, setView] = useState(<SignIn />); // État pour suivre la vue actuelle
+  
   return (
     <View style={styles.first}>
       <View style={styles.second}>

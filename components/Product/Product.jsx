@@ -8,11 +8,13 @@ export default function Product() {
   const handleButtonPress = () => {
     Alert.alert("Bouton appuyé !");
   };
+
   return (
     <View style={styles.cart}>
       <SafeAreaView>
         <View>
           <Image source={require("../../assets/chevron-left.png")} />
+          <Image source={require("../../assets/Favorite.png")} />
         </View>
         <Slider
           images={[
