@@ -19,14 +19,15 @@ export default function App() {
 
       <StatusBar style="auto" />
     </View>
-  );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    // flex: 1,
-    // backgroundColor: '#FF4B3A',
-    // alignItems: 'center',
-    // justifyContent: 'center',
-  },
-});
+)};
+// const styles = StyleSheet.create({
+//   container: {
+//     paddingTop: 50,
+//     paddingBottom: 15,
+//     margin: 0,
+//     backgroundColor: "#f2f2f2",
+//     alignItems: "center",
+//     justifyContent: "center",
+//     height: 850,
+//   },
+// });
