@@ -1,16 +1,14 @@
-import React, { useState } from "react";
+import React,{useState} from 'react'
 import { Image, Text, Alert, TextInput, View, StyleSheet } from "react-native";
-import HeaderFilArien from "../ressources/header";
-import CustomButton from "../ressources/Button";
+// import HeaderFilArien from "../ressources/header";
+// import CustomButton from "../ressources/Button";
 import { CheckBox, Icon } from "@rneui/themed";
-import { useNavigation } from '@react-navigation/native';
+import HeaderFilArien from '../components/ressources/header';
+import CustomButton from '../components/ressources/Button';
 
-export default function Profil() {
-
-  const navigation = useNavigation();
-
-  const handleLogin = () => {
-    navigation.navigate('Product');
+const User = () => {
+  const handleButtonPress = () => {
+    Alert.alert("Bouton appuyé !");
   };
   const [check1, setCheck1] = useState(false);
   const [check2, setCheck2] = useState(false);
@@ -24,7 +22,7 @@ export default function Profil() {
           <Text style={styles.titre}>Information</Text>
           <View style={styles.container}>
             <Image
-              source={require("../../assets/Profil.png")}
+              source={require("../assets/Profil.png")}
               style={styles.image}
             />
             <View style={styles.column}>
@@ -63,7 +61,7 @@ export default function Profil() {
               />
               <View style={styles.right}>
                 <View style={styles.logo}>
-                  <Image source={require("../../assets/Card.png")} style={styles.icons} />
+                  <Image source={require("../assets/Card.png")} style={styles.icons} />
                 </View>
                 <Text style={styles.libele}>Card</Text>
               </View>
@@ -92,7 +90,7 @@ export default function Profil() {
               />
               <View style={styles.right}>
                 <View style={styles.logo2}>
-                  <Image source={require("../../assets/Bank.png")} />
+                  <Image source={require("../assets/Bank.png")} />
                 </View>
                 <Text style={styles.libele}>Bank account</Text>
               </View>
@@ -121,7 +119,7 @@ export default function Profil() {
               />
               <View style={styles.right}>
                 <View style={styles.logo3}>
-                  <Image source={require("../../assets/Paypal.png")} style={styles.icons3} />
+                  <Image source={require("../assets/Paypal.png")} style={styles.icons3} />
                 </View>
                 <Text style={styles.libele}>Paypal</Text>
               </View>
@@ -129,12 +127,15 @@ export default function Profil() {
           </View>
         </View>
       </View>
-      <View style={{ marginLeft:20 }}>
-        <CustomButton title="Updatet" onPress={handleLogin} />
+      <View style={{ marginLeft: 30, }}>
+        <CustomButton title="Updatet" onPress={handleButtonPress} />
       </View>
     </View>
   );
 }
+
+export default User
+
 const styles = StyleSheet.create({
   titre: {
     fontSize: 14,

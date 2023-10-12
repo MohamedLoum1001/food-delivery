@@ -6,10 +6,11 @@ import { useNavigation } from '@react-navigation/native';
 
 function SignIn() {
 
-  const navigation = useNavigation();
+  const navigation = useNavigation()
 
   const handleLogin = () => {
-    navigation.navigate('Profil');
+    console.log('Navigating to Home');
+    navigation.navigate('Home');
   };
 
   return (
