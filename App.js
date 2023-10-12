@@ -10,6 +10,7 @@ import User from './Screens/User';
 import Favoris from './Screens/Favoris';
 import Home from './Screens/Home';
 
+
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
 
@@ -18,7 +19,18 @@ const App = () => {
     navigation.navigate(screenName);
   };
 
-<<<<<<< HEAD
+  const FavorisStack = () => {
+    return (
+      <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}
+      >
+        <Stack.Screen name='Favoris' component={Favoris} />
+      </Stack.Navigator>
+    );
+  };
+
   const HomeStack = () => {
     return (
       <Stack.Navigator
@@ -37,34 +49,6 @@ const App = () => {
             ),
           })}
         />
-=======
-export default function App() {
-  return (
-    // <View style={{ backgroundColor: "#f2f2f2"}}>
-    //   {/* <Login /> */}
-    //   <Product />
-    //   {/* <Product /> */}
-
-    // </View>
-
-    <NavigationContainer style={styles.container}>
-      <Stack.Navigator>
-        <Stack.Screen name="Login" component={Login} options={{ headerShown: false }} />
-        <Stack.Screen name="Profil" component={Profil} options={{ headerShown: false }} />
-        <Stack.Screen name="Product" component={Product} options={{ headerShown: false }} />
->>>>>>> 9ede97e82993b9b5f3706964c090d924d3c72abf
-      </Stack.Navigator>
-    );
-  };
-
-  const FavorisStack = () => {
-    return (
-      <Stack.Navigator
-      screenOptions={{
-        headerShown: false,
-      }}
-      >
-        <Stack.Screen name='Favoris' component={Favoris} />
       </Stack.Navigator>
     );
   };
@@ -152,8 +136,6 @@ export default function App() {
         />
       </Tab.Navigator>
     </NavigationContainer>
-<<<<<<< HEAD
-=======
 
 
     // <Provider>
@@ -172,7 +154,6 @@ export default function App() {
     // <View style={styles.container}>
     //   <Login/>
     // </View>
->>>>>>> 9ede97e82993b9b5f3706964c090d924d3c72abf
   );
 };
 
