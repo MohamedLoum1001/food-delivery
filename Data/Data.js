@@ -27,7 +27,7 @@ export const cardImage = [
         prix: "N1,900"
     },
     {
-        id: 1,
+        id: 2,
         img : require('../assets/images/plat2.png'),
         titre: "Spicy",
         texte: "fish sauce",

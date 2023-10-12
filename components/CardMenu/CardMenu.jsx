@@ -1,21 +1,25 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View, Image, Text } from 'react-native';
+import React from 'react';
 import { cardImage } from '../../Data/Data';
 
 export default function CardMenu() {
     return (
         <View style={styles.container}>
             {cardImage.map(item => (
-                <View style={styles.card}>
+                <View style={styles.card} key={item.id}>
+                    {/* Section pour l'en-tête de la carte */}
                     <View style={styles.cardHeader}>
-                        <Image source={item.img} key={item.id} style={styles.img} />
+                        <Image source={item.img} style={styles.img} />
                     </View>
 
+                    {/* Section pour le titre et le texte */}
                     <View style={styles.title}>
                         <Text style={styles.titre}>{item.titre}</Text>
                         <Text style={styles.texte}>{item.texte}</Text>
                     </View>
-                    
+
+                    {/* Section pour le prix */}
                     <View style={styles.viewPrix}>
                         <Text style={styles.prix}>{item.prix}</Text>
                     </View>
@@ -62,12 +66,12 @@ const styles = StyleSheet.create({
         marginTop: -170,
         width: 100,
         height: 100,
-       
+
         display: 'flex'
     },
     title: {
         // marginTop: 70,
-        paddingTop:  20
+        paddingTop: 20
     },
     titre: {
         fontWeight: '600',
@@ -80,9 +84,9 @@ const styles = StyleSheet.create({
         fontSize: 22,
         textAlign: 'center'
     },
-viewPrix: {
-    marginTop: 20,
-},
+    viewPrix: {
+        marginTop: 20,
+    },
     prix: {
         color: '#FA4A0C',
         fontSize: 17,

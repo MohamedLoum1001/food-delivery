@@ -1,7 +1,5 @@
 import React,{useState} from 'react'
 import { Image, Text, Alert, TextInput, View, StyleSheet } from "react-native";
-// import HeaderFilArien from "../ressources/header";
-// import CustomButton from "../ressources/Button";
 import { CheckBox, Icon } from "@rneui/themed";
 import HeaderFilArien from '../components/ressources/header';
 import CustomButton from '../components/ressources/Button';

@@ -2,18 +2,16 @@ import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
 import { navlink } from "../../Data/Data";
 
 export default function MenU() {
-  
+
   return (
     <View style={styles.container}>
       {navlink.map(link => (
-        <View style={styles.link}>
-          <TouchableOpacity key={link.id} style={styles.menu}>
+        <View key={link.id} style={styles.link}>
+          <TouchableOpacity style={styles.menu}>
             <Text style={styles.navLink}>{link.lien}</Text>
           </TouchableOpacity>
-
         </View>
       ))}
-      
     </View>
   );
 }
@@ -35,8 +33,6 @@ const styles = StyleSheet.create({
   menu: {
     display: 'flex',
     flexDirection: 'row',
-    // marginLeft: 50,
-    // marginRight: 5
   },
 
   navLink: {
@@ -44,7 +40,5 @@ const styles = StyleSheet.create({
     fontSize: 17,
     fontStyle: 'normal',
     fontWeight: 'normal',
-    // lineHeight: 'normal'
-
   }
 });

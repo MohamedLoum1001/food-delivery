@@ -1,9 +1,10 @@
 import { StyleSheet } from 'react-native';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { AppLoading } from 'expo';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
-import { FontAwesome } from '@expo/vector-icons';
+import { Ionicons, MaterialIcons, FontAwesome } from '@expo/vector-icons';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import History from './Screens/History';
 import User from './Screens/User';
@@ -14,27 +15,41 @@ const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
 
 const App = () => {
-  const navigateToScreenInTab = (navigation, screenName) => {
-    navigation.navigate(screenName);
-  };
+  const [isReady, setIsReady] = useState(false);
+
+  async function loadFonts() {
+    await Promise.all([
+      Ionicons.loadAsync({}),
+      MaterialIcons.loadAsync({}),
+      FontAwesome.loadAsync({
+        'FontAwesome': require('@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/FontAwesome.ttf'),
+      }),
+      // Chargez d'autres polices si nécessaire
+    ]);
+    setIsReady(true);
+  }
+
+  useEffect(() => {
+    loadFonts();
+  }, []);
+
+  if (!isReady) {
+    return <AppLoading />;
+  }
 
   const HomeStack = () => {
     return (
       <Stack.Navigator
-      screenOptions={{
-        headerShown: false,
-      }}
+        screenOptions={{
+          headerShown: false,
+        }}
       >
         <Stack.Screen
-          name='Home'
+          name='HomeStack'
           component={Home}
-          options={({ navigation }) => ({
-            headerRight: () => (
-              <Icon
-                onPress={() => navigateToScreenInTab(navigation, 'Home')}
-              />
-            ),
-          })}
+          options={{
+            headerRight: () => <Icon />,
+          }}
         />
       </Stack.Navigator>
     );
@@ -43,11 +58,11 @@ const App = () => {
   const FavorisStack = () => {
     return (
       <Stack.Navigator
-      screenOptions={{
-        headerShown: false,
-      }}
+        screenOptions={{
+          headerShown: false,
+        }}
       >
-        <Stack.Screen name='Favoris' component={Favoris} />
+        <Stack.Screen name='FavorisStack' component={Favoris} />
       </Stack.Navigator>
     );
   };
@@ -55,11 +70,11 @@ const App = () => {
   const UserStack = () => {
     return (
       <Stack.Navigator
-      screenOptions={{
-        headerShown: false,
-      }}
+        screenOptions={{
+          headerShown: false,
+        }}
       >
-        <Stack.Screen name='User' component={User} />
+         <Stack.Screen name='UserStack' component={User} />
       </Stack.Navigator>
     );
   };
@@ -67,11 +82,11 @@ const App = () => {
   const HistoryStack = () => {
     return (
       <Stack.Navigator
-      screenOptions={{
-        headerShown: false,
-      }}
+        screenOptions={{
+          headerShown: false,
+        }}
       >
-        <Stack.Screen name='History' component={History} />
+        <Stack.Screen name='HistoryStack' component={History} />
       </Stack.Navigator>
     );
   };
@@ -79,18 +94,19 @@ const App = () => {
   return (
     <NavigationContainer style={styles.container}>
       <Tab.Navigator
-        tabBarOptions={{
-          style: {
-            backgroundColor: 'transparent',
-            borderTopWidth: 0,
-            borderBottomWidth: 0,
-          },
-          tabStyle: {
+        screenOptions={{
+          tabBarActiveTintColor: '#FA4A0C',
+          tabBarInactiveTintColor: '#ADADAF',
+          tabBarShowLabel: false,
+          tabBarItemStyle: {
             backgroundColor: 'transparent',
           },
-          showLabel: false,
-          activeTintColor: '#FA4A0C',
-          inactiveTintColor: '#ADADAF',
+          tabBarStyle: [
+            {
+              display: 'flex',
+            },
+            null,
+          ],
         }}
       >
         <Tab.Screen
@@ -108,7 +124,7 @@ const App = () => {
           component={FavorisStack}
           options={{
             tabBarIcon: ({ color, size }) => (
-              <FontAwesome name='heart' size={size} color={color} />
+              <FontAwesome name="heart" size={size} color={color} />
             ),
             headerShown: false,
           }}

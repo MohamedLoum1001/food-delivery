@@ -1,11 +1,12 @@
 import { StyleSheet, View, Image, Text, TextInput, ScrollView, } from 'react-native';
+import React from 'react';
 import MenU from '../components/Menu/Menu';
 import CardMenu from '../components/CardMenu/CardMenu';
 
-export default function Home() {
+const Home = () => {
   return (
-    <View style={styles.container}>
       <ScrollView>
+    <View style={styles.container}>
         <View style={styles.image} >
           <View style={styles.toggler}>
             <Image source={require('../assets/icons/toggler.png')} />
@@ -41,17 +42,18 @@ export default function Home() {
         <Text style={styles.seeMore}>see more</Text>
       </View> */}
 
-      </ScrollView>
     </View>
+      </ScrollView>
 
   );
 }
+export default Home;
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'column',
     backgroundColor: '#f2f2f2',
-    // fontFamily: 'Arial'
   },
   image: {
     display: 'flex',
