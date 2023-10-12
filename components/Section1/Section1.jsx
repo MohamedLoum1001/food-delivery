@@ -1,8 +1,16 @@
 import React from 'react'
 import { View, StyleSheet, Text, TouchableOpacity } from 'react-native'
 import { Image } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+
 
 const Section1 = () => {
+    const navigation = useNavigation()
+
+    const handleLogin = () => {
+        console.log('Navigating to Home');
+        navigation.navigate('Home');
+    };
     return (
         <View style={styles.Section1}>
 
@@ -15,10 +23,10 @@ const Section1 = () => {
                 source={require('../../assets/Group.png')}
 
             />
-            <TouchableOpacity style={styles.Btn }>
-        <Text style={{ color: 'red' }}>Get started</Text>
-      </TouchableOpacity>
-          
+            <TouchableOpacity style={styles.Btn} onPress={handleLogin}>
+                <Text style={{ color: 'red' }}>Get started</Text>
+            </TouchableOpacity>
+
         </View>
     );
 }
@@ -26,8 +34,8 @@ const Section1 = () => {
 const styles = StyleSheet.create({
     Section1: {
         //   flex: 1,
-          backgroundColor: '#FF4B3A',
-          height: 1000,
+        backgroundColor: '#FF4B3A',
+        height: 1000,
 
     },
 
@@ -63,7 +71,7 @@ const styles = StyleSheet.create({
         width: 200,
         height: 30,
         marginLeft: 80,
-        marginTop: 30,
+        marginTop: -70,
     }
 
 });

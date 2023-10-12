@@ -5,79 +5,78 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 import { FontAwesome } from '@expo/vector-icons';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import History from './Screens/History';
-import User from './Screens/User';
-import Favoris from './Screens/Favoris';
-import Home from './Screens/Home';
+import Home from '../../Screens/Home';
+import Favoris from '../../Screens/Favoris';
+import User from '../../Screens/User';
+import History from '../../Screens/History';
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
 
-const App = () => {
-  const navigateToScreenInTab = (navigation, screenName) => {
-    navigation.navigate(screenName);
-  };
-
-  const HomeStack = () => {
-    return (
-      <Stack.Navigator
-      screenOptions={{
-        headerShown: false,
-      }}
-      >
-        <Stack.Screen
-          name='Home'
-          component={Home}
-          options={({ navigation }) => ({
-            headerRight: () => (
-              <Icon
-                onPress={() => navigateToScreenInTab(navigation, 'Home')}
-              />
-            ),
-          })}
-        />
-      </Stack.Navigator>
-    );
-  };
-
-  const FavorisStack = () => {
-    return (
-      <Stack.Navigator
-      screenOptions={{
-        headerShown: false,
-      }}
-      >
-        <Stack.Screen name='Favoris' component={Favoris} />
-      </Stack.Navigator>
-    );
-  };
-
-  const UserStack = () => {
-    return (
-      <Stack.Navigator
-      screenOptions={{
-        headerShown: false,
-      }}
-      >
-        <Stack.Screen name='User' component={User} />
-      </Stack.Navigator>
-    );
-  };
-
-  const HistoryStack = () => {
-    return (
-      <Stack.Navigator
-      screenOptions={{
-        headerShown: false,
-      }}
-      >
-        <Stack.Screen name='History' component={History} />
-      </Stack.Navigator>
-    );
-  };
-
+const BottomTab = () => {
+    const navigateToScreenInTab = (navigation, screenName) => {
+        navigation.navigate(screenName);
+      };
+    
+      const HomeStack = () => {
+        return (
+          <Stack.Navigator
+            screenOptions={{
+              headerShown: false,
+            }}
+          >
+            <Stack.Screen
+              name='Home'
+              component={Home}
+              options={({ navigation }) => ({
+                headerRight: () => (
+                  <Icon
+                    onPress={() => navigateToScreenInTab(navigation, 'Home')}
+                  />
+                ),
+              })}
+            />
+          </Stack.Navigator>
+        );
+      };
+    
+      const FavorisStack = () => {
+        return (
+          <Stack.Navigator
+            screenOptions={{
+              headerShown: false,
+            }}
+          >
+            <Stack.Screen name='Favoris' component={Favoris} />
+          </Stack.Navigator>
+        );
+      };
+    
+      const UserStack = () => {
+        return (
+          <Stack.Navigator
+            screenOptions={{
+              headerShown: false,
+            }}
+          >
+            <Stack.Screen name='User' component={User} />
+          </Stack.Navigator>
+        );
+      };
+    
+      const HistoryStack = () => {
+        return (
+          <Stack.Navigator
+            screenOptions={{
+              headerShown: false,
+            }}
+          >
+            <Stack.Screen name='History' component={History} />
+          </Stack.Navigator>
+        );
+      };
   return (
-    <NavigationContainer style={styles.container}>
+    <NavigationContainer>
       <Tab.Navigator
         tabBarOptions={{
           style: {
@@ -135,17 +134,9 @@ const App = () => {
         />
       </Tab.Navigator>
     </NavigationContainer>
-  );
-};
+  )
+}
 
-export default App;
+export default BottomTab
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection: 'column',
-    backgroundColor: '#f2f2f2',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+const styles = StyleSheet.create({});

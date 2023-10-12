@@ -21,9 +21,9 @@ const AppComponent = () => {
   const HomeStack = () => {
     return (
       <Stack.Navigator
-        screenOptions={{
-          headerShown: false,
-        }}
+      screenOptions={{
+        headerShown: false,
+      }}
       >
         <Stack.Screen
           name='Home'
@@ -43,9 +43,9 @@ const AppComponent = () => {
   const FavorisStack = () => {
     return (
       <Stack.Navigator
-        screenOptions={{
-          headerShown: false,
-        }}
+      screenOptions={{
+        headerShown: false,
+      }}
       >
         <Stack.Screen name='Favoris' component={Favoris} />
       </Stack.Navigator>
@@ -55,9 +55,9 @@ const AppComponent = () => {
   const UserStack = () => {
     return (
       <Stack.Navigator
-        screenOptions={{
-          headerShown: false,
-        }}
+      screenOptions={{
+        headerShown: false,
+      }}
       >
         <Stack.Screen name='User' component={User} />
       </Stack.Navigator>
@@ -67,9 +67,9 @@ const AppComponent = () => {
   const HistoryStack = () => {
     return (
       <Stack.Navigator
-        screenOptions={{
-          headerShown: false,
-        }}
+      screenOptions={{
+        headerShown: false,
+      }}
       >
         <Stack.Screen name='History' component={History} />
       </Stack.Navigator>
@@ -78,7 +78,6 @@ const AppComponent = () => {
 
   return (
     <NavigationContainer style={styles.container}>
-
       <Tab.Navigator
         tabBarOptions={{
           style: {
