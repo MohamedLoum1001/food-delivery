@@ -15,27 +15,27 @@ const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
 
 const App = () => {
-  const [isReady, setIsReady] = useState(false);
+  // const [isReady, setIsReady] = useState(false);
 
-  async function loadFonts() {
-    await Promise.all([
-      Ionicons.loadAsync({}),
-      MaterialIcons.loadAsync({}),
-      FontAwesome.loadAsync({
-        'FontAwesome': require('@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/FontAwesome.ttf'),
-      }),
-      // Chargez d'autres polices si nécessaire
-    ]);
-    setIsReady(true);
-  }
+  // async function loadFonts() {
+  //   await Promise.all([
+  //     Ionicons.loadAsync({}),
+  //     MaterialIcons.loadAsync({}),
+  //     FontAwesome.loadAsync({
+  //       'FontAwesome': require('@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/FontAwesome.ttf'),
+  //     }),
+  //     // Chargez d'autres polices si nécessaire
+  //   ]);
+  //   setIsReady(true);
+  // }
 
-  useEffect(() => {
-    loadFonts();
-  }, []);
+  // useEffect(() => {
+  //   loadFonts();
+  // }, []);
 
-  if (!isReady) {
-    return <AppLoading />;
-  }
+  // if (!isReady) {
+  //   return <AppLoading />;
+  // }
 
   const HomeStack = () => {
     return (

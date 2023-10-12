@@ -1,7 +1,7 @@
 import React from 'react'
 import { View, Image, Text, StyleSheet, SafeAreaView } from "react-native";
-import CustomButton from '../components/ressources/Button';
-import Slider from '../components/Product/Slider';
+// import CustomButton from '../components/ressources/Button';
+// import Slider from '../components/Product/Slider';
 
 
 const Favoris = () => {
@@ -9,38 +9,41 @@ const Favoris = () => {
     Alert.alert("Bouton appuyé !");
   };
   return (
-    <View style={styles.cart}>
-      <SafeAreaView>
-        <View style={styles.image}>
-          <View style={styles.fleche}>
-            <Image source={require("../assets/chevron-left.png")} />
-          </View>
-          <View style={styles.coeur}>
-            <Image source={require("../assets/Favorite.png")} />
-          </View>
-        </View>
-        <Slider
-          images={[
-            require("../assets/Plat.png"),
-          ]}
-        />
-        <View style={styles.desc}>
-          <Text style={styles.titre}>Veggie tomato mix</Text>
-          <Text style={styles.price}>N1,900</Text>
-          <View>
-            <Text style={styles.soustitre}>Delivery info</Text>
-            <Text style={styles.description}>Delivered between monday aug and thursday 20 from 8pm to 91:32 pm</Text>
-          </View>
-          <View>
-            <Text style={styles.soustitre}>Delivery info</Text>
-            <Text style={styles.description}>Delivered between monday aug and thursday 20 from 8pm to 91:32 pm</Text>
-          </View>
-          <View style={{ marginLeft: 20 }}>
-            <CustomButton title="Add to cart" onPress={handleButtonPress} />
-          </View>
-        </View>
-      </SafeAreaView>
+    <View>
+      <Text>Favoris</Text>
     </View>
+    // <View style={styles.cart}>
+    //   <SafeAreaView>
+    //     <View style={styles.image}>
+    //       <View style={styles.fleche}>
+    //         <Image source={require("../assets/chevron-left.png")} />
+    //       </View>
+    //       <View style={styles.coeur}>
+    //         <Image source={require("../assets/Favorite.png")} />
+    //       </View>
+    //     </View>
+    //     <Slider
+    //       images={[
+    //         require("../assets/Plat.png"),
+    //       ]}
+    //     />
+    //     <View style={styles.desc}>
+    //       <Text style={styles.titre}>Veggie tomato mix</Text>
+    //       <Text style={styles.price}>N1,900</Text>
+    //       <View>
+    //         <Text style={styles.soustitre}>Delivery info</Text>
+    //         <Text style={styles.description}>Delivered between monday aug and thursday 20 from 8pm to 91:32 pm</Text>
+    //       </View>
+    //       <View>
+    //         <Text style={styles.soustitre}>Delivery info</Text>
+    //         <Text style={styles.description}>Delivered between monday aug and thursday 20 from 8pm to 91:32 pm</Text>
+    //       </View>
+    //       <View style={{ marginLeft: 20 }}>
+    //         <CustomButton title="Add to cart" onPress={handleButtonPress} />
+    //       </View>
+    //     </View>
+    //   </SafeAreaView>
+    // </View>
   );
 }
 

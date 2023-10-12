@@ -13,9 +13,9 @@ const User = () => {
   const [check3, setCheck3] = useState(false);
   return (
     <View style={{ display: "flex", marginTop: 40, position: "relative", display: 'flex', height: 500,}}>
-      <HeaderFilArien title="My Profil" />
-
-      <View style={{ display: 'flex', flex: 1, top: 0, alignItems: 'center'}}>
+      {/* <HeaderFilArien title="My Profil" /> */}
+    <Text>User</Text>
+      {/* <UserView style={{ display: 'flex', flex: 1, top: 0, alignItems: 'center'}}>
         <View>
           <Text style={styles.titre}>Information</Text>
           <View style={styles.container}>
@@ -41,7 +41,7 @@ const User = () => {
                 checkedIcon={
                   <Icon
                     name="radio-button-checked"
-                    type="material"
+                    // type="material"
                     color="red"
                     size={15}
                   />
@@ -49,7 +49,7 @@ const User = () => {
                 uncheckedIcon={
                   <Icon
                     name="radio-button-unchecked"
-                    type="material"
+                    // type="material"
                     color="grey"
                     size={15}
                   />
@@ -70,7 +70,7 @@ const User = () => {
                 checkedIcon={
                   <Icon
                     name="radio-button-checked"
-                    type="material"
+                    // type="material"
                     color="red"
                     size={15}
                   />
@@ -78,7 +78,7 @@ const User = () => {
                 uncheckedIcon={
                   <Icon
                     name="radio-button-unchecked"
-                    type="material"
+                    // type="material"
                     color="grey"
                     size={15}
                   />
@@ -96,14 +96,14 @@ const User = () => {
 
             <View style={styles.option}>
               <CheckBox
-                checkedIcon={
-                  <Icon
-                    name="radio-button-checked"
-                    type="material"
-                    color="red"
-                    size={15}
-                  />
-                }
+                // checkedIcon={
+                //   <Icon
+                //     name="radio-button-checked"
+                //     type="material"
+                //     color="red"
+                //     size={15}
+                //   />
+                // }
                 uncheckedIcon={
                   <Icon
                     name="radio-button-unchecked"
@@ -124,10 +124,10 @@ const User = () => {
             </View>
           </View>
         </View>
-      </View>
+      </UserView>
       <View style={{ marginLeft: 30, }}>
         <CustomButton title="Updatet" onPress={handleButtonPress} />
-      </View>
+      </View> */}
     </View>
   );
 }
