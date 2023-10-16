@@ -47,7 +47,6 @@ const styles = StyleSheet.create({
         zIndex: 1,
         marginLeft: 70,
         marginTop: 50,
-        // padding: 20,
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
@@ -66,11 +65,9 @@ const styles = StyleSheet.create({
         marginTop: -170,
         width: 100,
         height: 100,
-
         display: 'flex'
     },
     title: {
-        // marginTop: 70,
         paddingTop: 20
     },
     titre: {
@@ -80,7 +77,6 @@ const styles = StyleSheet.create({
     },
     texte: {
         fontWeight: '600',
-        // padding: 20,
         fontSize: 22,
         textAlign: 'center'
     },
@@ -91,7 +87,6 @@ const styles = StyleSheet.create({
         color: '#FA4A0C',
         fontSize: 17,
         fontWeight: '700',
-        fontStyle: 'normal',
         textAlign: 'center'
     }
 });

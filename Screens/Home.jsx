@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     padding: 100,
-    marginTop: -60
+    marginTop: -50
   },
   toggler: {
     marginRight: 300,
@@ -110,7 +110,6 @@ const styles = StyleSheet.create({
     marginTop: 20,
     width: 314,
     height: 60,
-    // marginLe
   },
   recherche: {
     marginLeft: 10,

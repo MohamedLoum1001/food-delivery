@@ -1,95 +1,67 @@
+// App.js
+import React from 'react';
 import { StyleSheet } from 'react-native';
-import React, { useState, useEffect } from 'react';
-import { AppLoading } from 'expo';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
-import { Ionicons, MaterialIcons, FontAwesome } from '@expo/vector-icons';
-import Icon from 'react-native-vector-icons/FontAwesome';
-import History from './Screens/History';
-import User from './Screens/User';
-import Favoris from './Screens/Favoris';
 import Home from './Screens/Home';
+import Favoris from './Screens/Favoris';
+import User from './Screens/User';
+import History from './Screens/History';
+import HoverImage from './components/HoverImage/HoverImage';
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
 
+// Import des icônes
+const house = require('./assets/icons/home.png');
+const favorite = require('./assets/icons/heart.png');
+const users = require('./assets/icons/user.png');
+const historie = require('./assets/icons/history.png');
+
+const iconSize = 24; // Taille commune des icônes
+
 const App = () => {
-  const [isReady, setIsReady] = useState(false);
+  const HomeStack = () => (
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
+      <Stack.Screen name='Home' component={Home} />
+    </Stack.Navigator>
+  );
 
-  async function loadFonts() {
-    await Promise.all([
-      Ionicons.loadAsync({}),
-      MaterialIcons.loadAsync({}),
-      FontAwesome.loadAsync({
-        'FontAwesome': require('@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/FontAwesome.ttf'),
-      }),
-      // Chargez d'autres polices si nécessaire
-    ]);
-    setIsReady(true);
-  }
+  const FavorisStack = () => (
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
+      <Stack.Screen name='Favoris' component={Favoris} />
+    </Stack.Navigator>
+  );
+  
 
-  useEffect(() => {
-    loadFonts();
-  }, []);
+  const UserStack = () => (
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
+      <Stack.Screen name='User' component={User} />
+    </Stack.Navigator>
+  );
 
-  if (!isReady) {
-    return <AppLoading />;
-  }
-
-  const HomeStack = () => {
-    return (
-      <Stack.Navigator
-        screenOptions={{
-          headerShown: false,
-        }}
-      >
-        <Stack.Screen
-          name='HomeStack'
-          component={Home}
-          options={{
-            headerRight: () => <Icon />,
-          }}
-        />
-      </Stack.Navigator>
-    );
-  };
-
-  const FavorisStack = () => {
-    return (
-      <Stack.Navigator
-        screenOptions={{
-          headerShown: false,
-        }}
-      >
-        <Stack.Screen name='FavorisStack' component={Favoris} />
-      </Stack.Navigator>
-    );
-  };
-
-  const UserStack = () => {
-    return (
-      <Stack.Navigator
-        screenOptions={{
-          headerShown: false,
-        }}
-      >
-         <Stack.Screen name='UserStack' component={User} />
-      </Stack.Navigator>
-    );
-  };
-
-  const HistoryStack = () => {
-    return (
-      <Stack.Navigator
-        screenOptions={{
-          headerShown: false,
-        }}
-      >
-        <Stack.Screen name='HistoryStack' component={History} />
-      </Stack.Navigator>
-    );
-  };
+  const HistoryStack = () => (
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
+      <Stack.Screen name='History' component={History} />
+    </Stack.Navigator>
+  );
 
   return (
     <NavigationContainer style={styles.container}>
@@ -110,41 +82,65 @@ const App = () => {
         }}
       >
         <Tab.Screen
-          name='Home'
+          name='HomeStack'
           component={HomeStack}
           options={{
-            tabBarIcon: ({ color, size }) => (
-              <FontAwesome name='home' size={size} color={color} />
+            tabBarIcon: ({ focused }) => (
+              <HoverImage
+                source={house}
+                size={24}
+                activeColor="#FA4A0C"
+                inactiveColor={focused ? '#FA4A0C' : '#ADADAF'}
+                screenName="Home" 
+              />
             ),
             headerShown: false,
           }}
         />
         <Tab.Screen
-          name='Favoris'
+          name='FavorisStack'
           component={FavorisStack}
           options={{
-            tabBarIcon: ({ color, size }) => (
-              <FontAwesome name="heart" size={size} color={color} />
+            tabBarIcon: ({ focused }) => (
+              <HoverImage
+                source={favorite}
+                size={24}
+                activeColor="#FA4A0C"
+                inactiveColor={focused ? '#FA4A0C' : '#ADADAF'}
+                screenName="Favoris" 
+              />
             ),
             headerShown: false,
           }}
         />
         <Tab.Screen
-          name='User'
+          name='UserStack'
           component={UserStack}
           options={{
-            tabBarIcon: ({ color, size }) => (
-              <FontAwesome name='user' size={size} color={color} />
+            tabBarIcon: ({ focused }) => (
+              <HoverImage
+                source={users}
+                size={iconSize}
+                activeColor='#FA4A0C'
+                inactiveColor={focused ? '#FA4A0C' : '#ADADAF'}
+                screenName="User" 
+              />
             ),
             headerShown: false,
           }}
         />
         <Tab.Screen
-          name='History'
+          name='HistoryStack'
           component={HistoryStack}
           options={{
-            tabBarIcon: ({ color, size }) => (
-              <FontAwesome name='history' size={size} color={color} />
+            tabBarIcon: ({ focused }) => (
+              <HoverImage
+                source={historie}
+                size={24}
+                activeColor="#FA4A0C"
+                inactiveColor={focused ? '#FA4A0C' : '#ADADAF'}
+                screenName="History" 
+              />
             ),
             headerShown: false,
           }}
