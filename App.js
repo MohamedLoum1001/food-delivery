@@ -42,6 +42,7 @@ const App = () => {
     </Stack.Navigator>
   );
   
+  
 
   const UserStack = () => (
     <Stack.Navigator
@@ -107,7 +108,7 @@ const App = () => {
                 size={24}
                 activeColor="#FA4A0C"
                 inactiveColor={focused ? '#FA4A0C' : '#ADADAF'}
-                screenName="Favoris" 
+                screenName="Favoris"
               />
             ),
             headerShown: false,
@@ -129,7 +130,7 @@ const App = () => {
             headerShown: false,
           }}
         />
-        <Tab.Screen
+         <Tab.Screen
           name='HistoryStack'
           component={HistoryStack}
           options={{
