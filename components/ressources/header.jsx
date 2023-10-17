@@ -7,7 +7,7 @@ const HeaderFilArien = ({ title }) => {
     <View style={styles.entete}>
       <Image source={require("../../assets/chevron-left.png")} />
       <View style={{ display: "flex", justifyContent: "center", alignItems: "center", marginLeft: 150,}}>
-        <Text style={{ fontSize: 16, fontWeight: "bold"}}>{title}</Text>
+        <Text style={{ fontSize: 16, fontWeight: "900"}}>{title}</Text>
       </View>
     </View>
     
