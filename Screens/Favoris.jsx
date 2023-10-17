@@ -100,6 +100,6 @@ marginRight: 290
   description: {
     fontSize: 15,
     fontWeight: 400,
-    marginBottom: 20,
-  },
+    marginBottom: 20,
+  },
 });
