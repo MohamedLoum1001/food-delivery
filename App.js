@@ -92,7 +92,7 @@ const App = () => {
                 size={24}
                 activeColor="#FA4A0C"
                 inactiveColor={focused ? '#FA4A0C' : '#ADADAF'}
-                screenName="Home" 
+                screenName="HomeStack" 
               />
             ),
             headerShown: false,
@@ -108,7 +108,7 @@ const App = () => {
                 size={24}
                 activeColor="#FA4A0C"
                 inactiveColor={focused ? '#FA4A0C' : '#ADADAF'}
-                screenName="Favoris"
+                screenName="FavorisStack"
               />
             ),
             headerShown: false,
@@ -124,7 +124,7 @@ const App = () => {
                 size={iconSize}
                 activeColor='#FA4A0C'
                 inactiveColor={focused ? '#FA4A0C' : '#ADADAF'}
-                screenName="User" 
+                screenName="UserStack" 
               />
             ),
             headerShown: false,
@@ -140,7 +140,7 @@ const App = () => {
                 size={24}
                 activeColor="#FA4A0C"
                 inactiveColor={focused ? '#FA4A0C' : '#ADADAF'}
-                screenName="History" 
+                screenName="HistoryStack" 
               />
             ),
             headerShown: false,

@@ -5,8 +5,8 @@ import CardMenu from '../components/CardMenu/CardMenu';
 
 const Home = () => {
   return (
-      <ScrollView>
     <View style={styles.container}>
+      <ScrollView>
         <View style={styles.image} >
           <View style={styles.toggler}>
             <Image source={require('../assets/icons/toggler.png')} />
@@ -15,25 +15,25 @@ const Home = () => {
             <Image source={require('../assets/icons/panier.png')} />
           </View>
         </View>
-        {/* Titre */}
+      
         <View style={styles.form}>
           <View style={styles.titre}>
             <Text style={styles.texte}>Delicious</Text>
             <Text style={styles.texte}>food for you</Text>
           </View>
-          {/* Input */}
+         
           <View style={styles.input}>
             <Image source={require('../assets/icons/icon-recherche.png')} style={styles.recherche} />
             <TextInput placeholder='Search' style={styles.placeholder} />
           </View>
         </View>
-        {/* Menu - Carte - Footer */}
+        
         <View>
-          {/* MENU */}
+        
           <View>
             <MenU />
           </View>
-          {/* Cartes */}
+       
           <View>
             <CardMenu />
           </View>
@@ -42,8 +42,8 @@ const Home = () => {
         <Text style={styles.seeMore}>see more</Text>
       </View> */}
 
-    </View>
       </ScrollView>
+    </View>
 
   );
 }
@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
     display: "flex",
     justifyContent: "center",
     alignItems: "flex-start",
-    marginLeft: 20 
+    marginLeft: 20
   },
   panier: {
     marginRight: 20,
