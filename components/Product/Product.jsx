@@ -88,16 +88,16 @@ const styles = StyleSheet.create({
   price: {
     color: 'red',
     fontSize: 22,
-    fontWeight: 700,
+    fontWeight: '700',
     textAlign: 'center',
   },
   soustitre: {
     fontSize: 17,
-    fontWeight: 600,
+    fontWeight: '600',
   },
   description: {
     fontSize: 15,
-    fontWeight: 400,
+    fontWeight: '400',
     marginBottom: 20,
   },
 });
