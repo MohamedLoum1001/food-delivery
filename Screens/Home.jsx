@@ -126,7 +126,7 @@ const styles = StyleSheet.create({
   seeMore: {
     color: '#FA4A0C',
     fontSize: 15,
-    fontWeight: 400
+    fontWeight: '400'
   },
   Tab: {
     backgroundColor: 'tranparent',
